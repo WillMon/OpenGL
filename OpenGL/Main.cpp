@@ -50,7 +50,7 @@ int main() {
 		glClearColor(1, 1, 1, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		glClearColor(0.25f, 0.25f, 0.25, 1);
+		//glClearColor(0.25f, 0.25f, 0.25, 1);
 		glEnable(GL_DEPTH_TEST);
 
 		while(glfwWindowShouldClose(window) == false 
@@ -65,10 +65,14 @@ int main() {
 			vec4 black(0, 0, 0, 1);
 
 			for (int i = 0; i < 21; ++i) {
-				Gizmos::addLine(vec3(-10 + i, 0, 10), vec3(-10 + i, 0, -10), i == 10 ? white : black);
-				Gizmos::addLine(vec3(10, 0, -10 + i), vec3(-10, 0, -10 + i), i == 10 ? white : black);
+				Gizmos::addLine(vec3(-10 + i, 0, 10), vec3(-10 + i, 0, -10), i == 10 ? black : black);
+				Gizmos::addLine(vec3(10, 0, -10 + i), vec3(-10, 0, -10 + i), i == 10 ? black : black);
 			}
+
+
+			Gizmos::addSphere(vec3(0,0,0),1,20,20,vec4(0.160,0.160,0.160,1),nullptr,1);
 			Gizmos::draw(projection * view);
+			
 
 			glfwSwapBuffers(window);
 			glfwPollEvents();
