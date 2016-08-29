@@ -26,6 +26,7 @@
   <ItemGroup>
     <ClInclude Include="..\deps\aieutilities\Gizmos.h" />
     <ClInclude Include="..\deps\aieutilities\gl_core_4_4.h" />
+    <ClInclude Include="Application.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{63F2B482-055C-4116-B504-C7E787F47AF9}</ProjectGuid>

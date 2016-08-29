@@ -1,3 +1,4 @@
 ﻿  Main.cpp
+c:\users\william.montero\desktop\opengl\opengl\main.cpp(51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   OpenGL.vcxproj -> C:\Users\william.montero\Desktop\OpenGL\Debug\OpenGL.exe
   OpenGL.vcxproj -> C:\Users\william.montero\Desktop\OpenGL\Debug\OpenGL.pdb (Partial PDB)

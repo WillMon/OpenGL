@@ -32,5 +32,8 @@
     <ClInclude Include="..\deps\aieutilities\gl_core_4_4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

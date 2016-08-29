@@ -5,6 +5,7 @@
 #include <glm\ext.hpp>
 #include <iostream>
 
+
 using glm::vec3;
 using glm::vec4;
 using glm::mat4;
@@ -33,7 +34,7 @@ int main() {
 	//Gizmos ~ a Helper class, it simply a tool to easily visualises shapes and lines 
 	Gizmos::create();
 
-	//Initialises a;; of the gizmos and sets up our virtual camera
+	//Initialises all of the gizmos and sets up our virtual camera
 	mat4 view = glm::lookAt(vec3(10, 10, 10), vec3(0), vec3(0, 1, 0));
 	mat4 projection = glm::perspective(glm::pi<float>() * 0.35f, 16 / 9.f, 0.1f, 1000.f);
 
@@ -47,7 +48,7 @@ int main() {
 		glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS) {
 
 		//Set the Color of the windows 
-		glClearColor(1, 1, 1, 1);
+		glClearColor(0.160, 0.160, 0.160, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		//glClearColor(0.25f, 0.25f, 0.25, 1);
@@ -65,12 +66,12 @@ int main() {
 			vec4 black(0, 0, 0, 1);
 
 			for (int i = 0; i < 21; ++i) {
-				Gizmos::addLine(vec3(-10 + i, 0, 10), vec3(-10 + i, 0, -10), i == 10 ? black : black);
-				Gizmos::addLine(vec3(10, 0, -10 + i), vec3(-10, 0, -10 + i), i == 10 ? black : black);
+				Gizmos::addLine(vec3(-10 + i, 0, 10), vec3(-10 + i, 0, -10), i == 5 ? black : white);
+				Gizmos::addLine(vec3(10, 0, -10 + i), vec3(-10, 0, -10 + i), i == 10 ? black : white);
 			}
 
-
-			Gizmos::addSphere(vec3(0,0,0),1,20,20,vec4(0.160,0.160,0.160,1),nullptr,1);
+			//addSphere(Location - vec3(x,y,z),radius,rows,colume,color,matrix refrenced)
+			Gizmos::addSphere(vec3(0,0,0),1,20,20,vec4(0.255,0.255,0,1),nullptr);
 			Gizmos::draw(projection * view);
 			
 
