@@ -27,6 +27,7 @@
     <ClInclude Include="..\deps\aieutilities\Gizmos.h" />
     <ClInclude Include="..\deps\aieutilities\gl_core_4_4.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Planets.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
