@@ -82,7 +82,7 @@ bool MyApp::StartUp() {
 	auto minor = ogl_GetMinorVersion();
 	printf("GL: %i.%i\n", major, minor);
 
-	//Setd the coor for the fair plain 
+	//Setd the color for the fair plain 
 	glClearColor(0.255f, 0.255f, 0.255f, 1.0f);
 	
 	//Set Buffer enabled 
@@ -103,8 +103,8 @@ void MyApp::draw() {
 	Gizmos::clear();
 	Gizmos::addTransform(glm::mat4(4));
 	//Set the time in the game space
-	currentTime = clock();
-	deltaTime = (currentTime - prevTime) / 10;
+	currentTime = glfwGetTime();
+	deltaTime = (currentTime - prevTime);
 	prevTime = currentTime;
 
 	printf("DT: %i.%i\n", deltaTime);
@@ -114,7 +114,7 @@ void MyApp::draw() {
 	//mat4 earth = thesunmatrix * glm::translate(vec3(5,0,0))
 	//mat4 moon = earth * glm::translate(vec3(15,0,0)) * scale(.5,.5,.5)
 	//vec4 transcolearth = earth[3]
-	sunLoc = sunLoc * glm::translate(vec3(0,deltaTime * cos(1),0));
+	//sunLoc = sunLoc * glm::translate(vec3(0,deltaTime * cos(1),0));
 	marsLoc = sunLoc * glm::translate(vec3(1.75f,0,0));
 	earthLoc = sunLoc * glm::translate(vec3(2.75f,0,0));
 	moonLoc = earthLoc * glm::translate(vec3(.75f,.35f,0));
@@ -124,11 +124,12 @@ void MyApp::draw() {
 	marsLoc = marsLoc * glm::scale(vec3(.35, .35, .35));
 	earthLoc = earthLoc * glm::scale(vec3(.45, .45, .45));
 	moonLoc = moonLoc * glm::scale(vec3(.15, .15, .15));
-
+	float t = glfwGetTime();
+	sunLoc *= glm::rotate(t * deltaTime, vec3(0, 1, 0));
 	//planets Rotation from the sun
-	marsLoc = marsLoc * glm::rotate(10.0f * deltaTime * 10, vec3(0, 1, 0));
-	earthLoc = earthLoc*  glm::rotate(.5f * deltaTime, vec3(0, 1, 0));
-	moonLoc = moonLoc *  glm::rotate(.5f * deltaTime, vec3(0, 1, 0));
+	//marsLoc = marsLoc * glm::rotate(10.0f * deltaTime * .5f, vec3(0, 1, 0));
+	//earthLoc = earthLoc*  glm::rotate(.5f * deltaTime, vec3(0, 1, 0));
+	//moonLoc = moonLoc *  glm::rotate(.5f * deltaTime, vec3(0, 1, 0));
 
 	//make a matrix for each planet
 	//transform that matrix  

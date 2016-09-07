@@ -31,6 +31,7 @@ private:
 	mat4 projectionTransform;
 	mat4 projectionViewTransform;
 
+
 };
 
 
@@ -43,23 +44,33 @@ private:
 	vec3 up;
 };
 
-Camera::Camera() {
-}
+Camera::Camera() {}
+
+//Praspective Transform/Orthographic Projection 
 void Camera::setPrespective(float fieldview, float aspectRatio, float nEar, float fAr) {
-	viewTransform[0][0] = 1 / aspectRatio * tan(fieldview / 2);
-	viewTransform[1][1] = 1 / tan(fieldview / 2);
-	viewTransform[2][2] = -((fAr + nEar / fAr - nEar));
-	viewTransform[2][3] = -((2*fAr*nEar) / (fAr - nEar));
+	projectionTransform[0][0] = 1 / aspectRatio * tan(fieldview / 2);
+	projectionTransform[1][1] = 1 / tan(fieldview / 2);
+	projectionTransform[2][2] = -((fAr + nEar / fAr - nEar));
+	projectionTransform[2][3] = -((2*fAr*nEar) / (fAr - nEar));
+	projectionTransform[3][2] = -1;
 }
+//Persoective View 
 void Camera::setLookAt(vec3 from, vec3 to, vec3 up) {
-	glm::lookAt(from, to, up);
+	viewTransform = glm::lookAt(from, to, up);
+}
+//Modle Matrex
+void Camera::setPosition(vec3 position) {
+	worldTransform = glm::translate(position);
+}
+mat4 Camera::getWorldTransform() {
+	mat4 world = worldTransform * viewTransform;
+	return world;
 }
 mat4 Camera::getProjection() {
 
 }
-mat4 Camera::getView() {
-	return viewTransform;
+
+mat4 Camera::getView() {	
+	return getWorldTransform() * viewTransform;
 }
-
-
 #endif

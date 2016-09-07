@@ -1,5 +1,6 @@
 ﻿  Main.cpp
-c:\users\william.montero\desktop\opengl\opengl\application.h(106): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+c:\users\william.montero\desktop\opengl\opengl\application.h(106): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\william.montero\desktop\opengl\opengl\application.h(127): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\william.montero\desktop\opengl\opengl\application.h(110): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'double'
 c:\users\william.montero\desktop\opengl\opengl\application.h(110): warning C4473: 'printf' : not enough arguments passed for format string
   c:\users\william.montero\desktop\opengl\opengl\application.h(110): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
