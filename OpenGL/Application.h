@@ -114,6 +114,7 @@ void MyApp::draw() {
 	//mat4 earth = thesunmatrix * glm::translate(vec3(5,0,0))
 	//mat4 moon = earth * glm::translate(vec3(15,0,0)) * scale(.5,.5,.5)
 	//vec4 transcolearth = earth[3]
+	sunLoc = sunLoc * glm::translate(vec3(0,deltaTime * cos(1),0));
 	marsLoc = sunLoc * glm::translate(vec3(1.75f,0,0));
 	earthLoc = sunLoc * glm::translate(vec3(2.75f,0,0));
 	moonLoc = earthLoc * glm::translate(vec3(.75f,.35f,0));
@@ -125,7 +126,7 @@ void MyApp::draw() {
 	moonLoc = moonLoc * glm::scale(vec3(.15, .15, .15));
 
 	//planets Rotation from the sun
-	marsLoc = marsLoc * glm::rotate(.5f * deltaTime * 10, vec3(0, 1, 0));
+	marsLoc = marsLoc * glm::rotate(10.0f * deltaTime * 10, vec3(0, 1, 0));
 	earthLoc = earthLoc*  glm::rotate(.5f * deltaTime, vec3(0, 1, 0));
 	moonLoc = moonLoc *  glm::rotate(.5f * deltaTime, vec3(0, 1, 0));
 
@@ -141,7 +142,11 @@ void MyApp::draw() {
 		Gizmos::addLine(vec3(20, 0, -20 + i), vec3(-20, 0, -20 + i), i == 20 ? black : white);
 	}
 	//addSphere(Location - vec3(x,y,z),radius,rows,colume,color,matrix refrenced)
-	if (glfwGetKey(window, GLFW_KEY_Q) != GLFW_PRESS) {}
+	if (glfwGetKey(window, GLFW_KEY_Q) != GLFW_PRESS) {
+	
+		
+		
+	}
 
 	
 	Gizmos::addSphere(vec3(sunLoc[3][0], sunLoc[3][1], sunLoc[3][2]),1, 30, 20, yellow, &sunLoc);
