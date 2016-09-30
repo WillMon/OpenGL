@@ -1,10 +1,14 @@
 ﻿  Main.cpp
-c:\users\william.montero\desktop\opengl\opengl\application.h(106): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\william.montero\desktop\opengl\opengl\application.h(127): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\william.montero\desktop\opengl\opengl\application.h(110): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'double'
-c:\users\william.montero\desktop\opengl\opengl\application.h(110): warning C4473: 'printf' : not enough arguments passed for format string
-  c:\users\william.montero\desktop\opengl\opengl\application.h(110): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
-  c:\users\william.montero\desktop\opengl\opengl\application.h(110): note: the missing variadic argument 2 is required by format string '%i'
-c:\users\william.montero\desktop\opengl\opengl\application.h(90): warning C4715: 'MyApp::StartUp': not all control paths return a value
-  OpenGL.vcxproj -> C:\Users\william.montero\Desktop\OpenGL\Debug\OpenGL.exe
-  OpenGL.vcxproj -> C:\Users\william.montero\Desktop\OpenGL\Debug\OpenGL.pdb (Partial PDB)
+c:\users\william.montero.aie\desktop\opengl\opengl\application.h(106): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\william.montero.aie\desktop\opengl\opengl\application.h(127): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\william.montero.aie\desktop\opengl\opengl\application.h(110): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'double'
+c:\users\william.montero.aie\desktop\opengl\opengl\application.h(110): warning C4473: 'printf' : not enough arguments passed for format string
+  c:\users\william.montero.aie\desktop\opengl\opengl\application.h(110): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\william.montero.aie\desktop\opengl\opengl\application.h(110): note: the missing variadic argument 2 is required by format string '%i'
+  Gizmos.cpp
+  Generating Code...
+c:\users\william.montero.aie\desktop\opengl\opengl\application.h(90): warning C4715: 'MyApp::StartUp': not all control paths return a value
+  gl_core_4_4.c
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  OpenGL.vcxproj -> C:\Users\william.montero.AIE\Desktop\OpenGL\Debug\OpenGL.exe
+  OpenGL.vcxproj -> C:\Users\william.montero.AIE\Desktop\OpenGL\Debug\OpenGL.pdb (Partial PDB)
