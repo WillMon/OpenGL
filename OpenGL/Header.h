@@ -1,0 +1,3 @@
+#ifndef CAMERA
+
+#endif // !CAMERA

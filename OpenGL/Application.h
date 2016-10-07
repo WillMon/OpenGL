@@ -125,7 +125,9 @@ void MyApp::draw() {
 	earthLoc = earthLoc * glm::scale(vec3(.45, .45, .45));
 	moonLoc = moonLoc * glm::scale(vec3(.15, .15, .15));
 	float t = glfwGetTime();
-	sunLoc *= glm::rotate(t * deltaTime, vec3(0, 1, 0));
+
+	sunLoc *= glm::rotate( deltaTime, vec3(0, 1, 0));
+	earthLoc *= glm::rotate(deltaTime, vec3(0, 1, 0));
 	//planets Rotation from the sun
 	//marsLoc = marsLoc * glm::rotate(10.0f * deltaTime * .5f, vec3(0, 1, 0));
 	//earthLoc = earthLoc*  glm::rotate(.5f * deltaTime, vec3(0, 1, 0));
