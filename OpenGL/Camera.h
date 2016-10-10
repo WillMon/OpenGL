@@ -45,7 +45,6 @@ public:
 	void update(float deltaTime) override;
 	void setSpeed(float speed) { };
 };
-
 Camera::Camera(float filedOFView, float aspectRatio, float fnear, float ffar){
 	speed = 10;
 	up = vec3(0, 1, 0);
@@ -95,9 +94,11 @@ void Camera::update(float deltaTime) {
 		siPrevMouseY = mouseY;
 
 		glm::mat4 mMat;
+		glm::vec3 worldVec = vec3(worldTransform[0].x, worldTransform[0].y, worldTransform[0].z );
+
 		// pitch
 		if (iDeltaY != 0) {
-			mMat = glm::axisAngleMatrix(worldTransform[0].xyz, (float)-iDeltaY / 150.0f);
+			mMat = glm::axisAngleMatrix(worldVec, (float)-iDeltaY / 150.0f);
 			worldTransform[0] = mMat * worldTransform[0];
 			worldTransform[1] = mMat * worldTransform[1];
 			worldTransform[2] = mMat * worldTransform[2];
